@@ -52,6 +52,7 @@
   </style>
 </head>
 <body>
+  
 
   <div class="page" id="page">
     <div id="content">
@@ -59,6 +60,10 @@
       <p>
         En el principio creó Dios los cielos y la tierra. Y la tierra estaba desordenada y vacía,
         y las tinieblas estaban sobre la faz del abismo, y el Espíritu de Dios se movía sobre la faz de las aguas...
+        sadfasldkfhjaslkdjfhalskdjhfalskdjfhaslkdjfhaslkdjfhaslkdjfh
+        kasldhfklasjdhfaksljdhf
+        kjasdhfkjasdhfkasjdhfaslkjdf
+        sjdhfkasjdhfkjhfaskdjh
       </p>
       <p>
         Y dijo Dios: Sea la luz; y fue la luz. Y vio Dios que la luz era buena; y separó Dios la luz de las tinieblas...
@@ -68,26 +73,29 @@
     <div class="arrow" id="nextPage">&#10145;</div>
   </div>
 
-  <script>
-    const pages = [
-      `<h2>Génesis 1</h2><p>En el principio creó Dios los cielos y la tierra...</p>`,
-      `<h2>Génesis 2</h2><p>Fueron, pues, acabados los cielos y la tierra...</p>`,
-      `<h2>Génesis 3</h2><p>Pero la serpiente era astuta, más que todos los animales...</p>`,
-      `<h2>Génesis 4</h2><p>Conoció Adán a su mujer Eva, la cual concibió...</p>`,
-      `<h2>Génesis 5</h2><p>Este es el libro de las generaciones de Adán...</p>`
-    ];
 
-    let currentPage = 0;
+  <script src="biblia.js"></script>
+
+
+  <script>
+    let currentBook = "Genesis";
+    let currentChapter = 1;
+
+    function renderChapter(book, chapter) {
+      const verses = biblia[book][chapter];
+      let html = `<h2>${book} ${chapter}</h2>`;
+      verses.forEach((verse, idx) => {
+        html += `<p><strong>${idx + 1}</strong> ${verse}</p>`;
+      });
+      document.getElementById("content").innerHTML = html;
+    }
+
+    renderChapter(currentBook, currentChapter);
 
     document.getElementById("nextPage").addEventListener("click", () => {
-      const page = document.getElementById("page");
-      page.classList.add("turn");
-
-      setTimeout(() => {
-        currentPage = (currentPage + 1) % pages.length;
-        document.getElementById("content").innerHTML = pages[currentPage];
-        page.classList.remove("turn");
-      }, 600);
+      const chapterCount = Object.keys(biblia[currentBook]).length;
+      currentChapter = currentChapter < chapterCount ? currentChapter + 1 : 1;
+      renderChapter(currentBook, currentChapter);
     });
   </script>
 </body>

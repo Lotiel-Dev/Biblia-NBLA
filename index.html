@@ -49,30 +49,39 @@
     .hidden {
       display: none;
     }
+
+    #prevPage {
+    left: 1rem;
+    right: auto;
+    }
+
+    #nextPage {
+    right: 1rem;
+  }
+
   </style>
 </head>
 <body>
-  
+  <div style="text-align:center; margin-top:1rem;">
+    <select id="bookSelect">
+      <option value="Genesis">Génesis</option>
+      <!-- otros libros en el futuro -->
+    </select>
 
-  <div class="page" id="page">
-    <div id="content">
-      <h2>Génesis 1</h2>
-      <p>
-        En el principio creó Dios los cielos y la tierra. Y la tierra estaba desordenada y vacía,
-        y las tinieblas estaban sobre la faz del abismo, y el Espíritu de Dios se movía sobre la faz de las aguas...
-        sadfasldkfhjaslkdjfhalskdjhfalskdjfhaslkdjfhaslkdjfhaslkdjfh
-        kasldhfklasjdhfaksljdhf
-        kjasdhfkjasdhfkasjdhfaslkjdf
-        sjdhfkasjdhfkjhfaskdjh
-      </p>
-      <p>
-        Y dijo Dios: Sea la luz; y fue la luz. Y vio Dios que la luz era buena; y separó Dios la luz de las tinieblas...
-      </p>
-      <!-- aquí puedes continuar con el texto completo -->
-    </div>
-    <div class="arrow" id="nextPage">&#10145;</div>
+    <select id="chapterSelect">
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
   </div>
 
+  <div class="page" id="page">
+    <div id="content"></div>
+    <div class="arrow" id="prevPage">&#11013;</div>
+    <div class="arrow" id="nextPage">&#10145;</div>
+  </div>
+    
+  </div>
+  
 
   <script src="biblia.js"></script>
 
@@ -90,13 +99,57 @@
       document.getElementById("content").innerHTML = html;
     }
 
-    renderChapter(currentBook, currentChapter);
+    function updateChapterSelect(book) {
+      const chapterSelect = document.getElementById("chapterSelect");
+      chapterSelect.innerHTML = "";
+      const chapters = Object.keys(biblia[book]);
+      chapters.forEach(ch => {
+        chapterSelect.innerHTML += `<option value="${ch}">${ch}</option>`;
+      });
+    }
 
-    document.getElementById("nextPage").addEventListener("click", () => {
-      const chapterCount = Object.keys(biblia[currentBook]).length;
-      currentChapter = currentChapter < chapterCount ? currentChapter + 1 : 1;
+    document.getElementById("bookSelect").addEventListener("change", (e) => {
+      currentBook = e.target.value;
+      currentChapter = 1;
+      updateChapterSelect(currentBook);
       renderChapter(currentBook, currentChapter);
     });
+
+    document.getElementById("chapterSelect").addEventListener("change", (e) => {
+      currentChapter = parseInt(e.target.value);
+      renderChapter(currentBook, currentChapter);
+    });
+
+    document.getElementById("nextPage").addEventListener("click", () => {
+      const chapters = Object.keys(biblia[currentBook]).length;
+      if (currentChapter < chapters) {
+        currentChapter++;
+        document.getElementById("chapterSelect").value = currentChapter;
+        animateTurn(() => renderChapter(currentBook, currentChapter));
+      }
+    });
+
+    document.getElementById("prevPage").addEventListener("click", () => {
+      if (currentChapter > 1) {
+        currentChapter--;
+        document.getElementById("chapterSelect").value = currentChapter;
+        animateTurn(() => renderChapter(currentBook, currentChapter));
+      }
+    });
+
+    function animateTurn(callback) {
+      const page = document.getElementById("page");
+      page.classList.add("turn");
+      setTimeout(() => {
+        callback();
+        page.classList.remove("turn");
+      }, 600);
+    }
+
+    // inicial
+    updateChapterSelect(currentBook);
+    renderChapter(currentBook, currentChapter);
+
   </script>
 </body>
 </html>

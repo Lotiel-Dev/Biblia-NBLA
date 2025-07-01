@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Biblia Digital</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #fdf7e4;
+      font-family: 'Times New Roman', serif;
+      color: #3e2f1c;
+    }
+
+    .page {
+      position: relative;
+      width: 80%;
+      margin: 2rem auto;
+      padding: 2rem;
+      border: 12px solid goldenrod;
+      border-image: repeating-linear-gradient(45deg, goldenrod, goldenrod 10px, #fff8e1 10px, #fff8e1 20px) 20;
+      border-radius: 12px;
+      background-color: #fefcf8;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      transition: transform 0.6s ease;
+      column-count: 2;
+      column-gap: 2rem;
+      height: 80vh;
+      overflow: hidden;
+    }
+
+    .page.turn {
+      transform: rotateY(-180deg);
+    }
+
+    .arrow {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      cursor: pointer;
+      font-size: 2rem;
+      color: goldenrod;
+      transition: transform 0.3s;
+    }
+    .arrow:hover {
+      transform: scale(1.2);
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page" id="page">
+    <div id="content">
+      <h2>Génesis 1</h2>
+      <p>
+        En el principio creó Dios los cielos y la tierra. Y la tierra estaba desordenada y vacía,
+        y las tinieblas estaban sobre la faz del abismo, y el Espíritu de Dios se movía sobre la faz de las aguas...
+      </p>
+      <p>
+        Y dijo Dios: Sea la luz; y fue la luz. Y vio Dios que la luz era buena; y separó Dios la luz de las tinieblas...
+      </p>
+      <!-- aquí puedes continuar con el texto completo -->
+    </div>
+    <div class="arrow" id="nextPage">&#10145;</div>
+  </div>
+
+  <script>
+    const pages = [
+      `<h2>Génesis 1</h2><p>En el principio creó Dios los cielos y la tierra...</p>`,
+      `<h2>Génesis 2</h2><p>Fueron, pues, acabados los cielos y la tierra...</p>`,
+      `<h2>Génesis 3</h2><p>Pero la serpiente era astuta, más que todos los animales...</p>`,
+      `<h2>Génesis 4</h2><p>Conoció Adán a su mujer Eva, la cual concibió...</p>`,
+      `<h2>Génesis 5</h2><p>Este es el libro de las generaciones de Adán...</p>`
+    ];
+
+    let currentPage = 0;
+
+    document.getElementById("nextPage").addEventListener("click", () => {
+      const page = document.getElementById("page");
+      page.classList.add("turn");
+
+      setTimeout(() => {
+        currentPage = (currentPage + 1) % pages.length;
+        document.getElementById("content").innerHTML = pages[currentPage];
+        page.classList.remove("turn");
+      }, 600);
+    });
+  </script>
+</body>
+</html>
+
+   

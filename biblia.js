@@ -2,14 +2,14 @@
 const biblia = {
   "Genesis": {
     1: [
-      "En el principio creó Dios los cielos y la tierra.",
-      "Y la tierra estaba desordenada y vacía, y las tinieblas estaban sobre la faz del abismo, y el Espíritu de Dios se movía sobre la faz de las aguas.",
-      "Y dijo Dios: Sea la luz; y fue la luz.",
-      "Y vio Dios que la luz era buena; y separó Dios la luz de las tinieblas.",
-      "Llamó Dios a la luz Día, y a las tinieblas llamó Noche. Y fue la tarde y la mañana un día.",
-      "",
-      "",
-      "",
+      "En el principio Dios creo los cielos y la tierra",
+      "La tierra estaba sin orden y vacia, y las tinieblas cubrian la superficie del abismo, y el Espiritu de Dios se movia sobre la superficie de las aguas.",
+      "Entonces dijo Dios: Sea la luz. Y hubo luz",
+      "Dios vio que la luz era buena; y Dios separo la luz de las tinieblas.",
+      "Y Dios llamo a la luz dia y a las tinieblas llamo noche. Y fue la tarde y fue la mañana: un día.",
+      "Entonces dijo Dios: Haya expansion en medio de las aguas, y separe las aguas de las aguas.",
+      "Dios hizo la expansion, y separo las aguas que estaban debajo de la expansion de las aguas que estaban sobre la expansion. Y asi fue.",
+      "Y Dios llamo a la expansion cielos. Y fue la tarde y fue la mañana: el segundo dia.",
       "",
       "",
       "",

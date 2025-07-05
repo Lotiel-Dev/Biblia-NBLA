@@ -24,14 +24,24 @@ const biblia = {
       "Entonces dijo Dios: Llénense las aguas de multitudes de seres vivientes, y vuelen las aves sobre la tierra en la abierta expansión de los cielos.",
       "Y Dios creó los grandes monstruos marinos y todo ser viviente que se mueve, de los cuales, según su especie, están llenas las aguas, y toda ave según su especie. Y Dios vio que era bueno.",
       "Y dijo Dios: hagamos al hombre a Nuestra imagen, conforme a Nuestra semejanza; y ejerza dominio sobre los peces de mar, sobre las aves del cielo, sobre los ganados, sobre toda la tierra, y sobre todo reptil que se arrastra sobre la tierra.",
-      "",
-      "",
-      "",
+      "Dios creó al hombre a imagen Suya, a imagen de Dios lo creó; varón y hembra los creó.",
+      "Dios los bendijo y les dijo: Sean fecundos y multipliquense. Llenen la tierra y sométanla. Ejerzan dominio sobre los peces de mar, sobre las aves del cielo y sobre todo ser viviente que se mueva sobre la tierra.",
+      "También les dijo Dios: Miren, Yo les he dado a ustedes toda planta que da semilla que hay en la superficie de toda la tierra, y todo árbol que tiene fruto que da semilla; esto les servirá de alimento.",
+      "Y a todo animal de la tierra, a toda ave de los cielos y a todo lo que se mueva sobre la tierra, y que tiene vida, les he dado toda planta verde para alimento. Y así fue.",
+      "Dios vio todo lo que habia hecho; y era bueno en gran manera. Y fue la tarde y fue la mañana: el sexto día.",
     ],
     2: [
-      "Fueron, pues, acabados los cielos y la tierra, y todo el ejército de ellos.",
-      "Y acabó Dios en el día séptimo la obra que hizo; y reposó el día séptimo de toda la obra que hizo.",
-      "Y bendijo Dios al día séptimo, y lo santificó; porque en él reposó de toda su obra que había creado y hecho."
+      "Así fueron acabados los cielos y la tierra y todas sus huestes.",
+      "En el séptimo día ya Dios había completado la obra que había estado haciendo, y reposo en el día séptimo de toda la obra que había hecho.",
+      "Dios bendijo al séptimo día y lo santificó, por que en él reposó de toda la obra que Él había creado y hecho.",
+      "Estos son los orígenes de los cielos y de la tierra cuando fueron creados, el día en que el SEÑOR Dios hizo la tierra y los cielos.",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
     ]
   }
 };

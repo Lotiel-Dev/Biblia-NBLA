@@ -55,7 +55,11 @@ const biblia = {
       "De la costilla que el SEÑOR Dios había tomado del hombre, formó una mujer y la trajo al hombre.",
       "Y el hombre dijo: Esta es ahora hueso de mis huesos, y carne de mi carne. Ella será llamada mujer, Porque del hombre fue tomada.",
       "Por tanto el hombre dejará a su padre y a su madre y se unirá a su mujer, y serán una sola carne.",
-      "Ambos estaban desnudos, el hombre y su mujer, pero no se avergonzaban.",
+      "Ambos estaban desnudos, el hombre y su mujer, pero no se avergonzaban."
+    ],
+    3: [
+      "",
+      "",
       "",
       "",
       "",
